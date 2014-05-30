@@ -21,8 +21,8 @@ class Main extends CI_Controller {
 
 	public function guardar() {
 		$data = array(
-			'titulo' => $this->input->post('titulo',TRUE),
-			'url' => $this->input->post('url', TRUE),
+			'titulo'   => $this->input->post('titulo',TRUE),
+			'url'      => $this->input->post('url', TRUE),
 			'creacion' => date('Y/m/d h:m')
 		);
 
@@ -33,7 +33,7 @@ class Main extends CI_Controller {
 	public function ver(){
 		$data = array(
 			'enlaces' => $this->bookmarksModel->verTodo(),
-			'dump' => 0
+			'dump'    => 0
 		);
 
 		$this->load->view('headers/librerias');
@@ -41,8 +41,26 @@ class Main extends CI_Controller {
 		$this->load->view('footer');
 	}
 
-	
-	
+	public function buscar() {
+		$data = array();
+
+		$query = $this->input->get('query', TRUE);
+
+		if ($query) {
+			$result = $this->bookmarksModel->buscar(trim($query));
+			if ($result != FALSE){
+				$data = array('result' => $result);
+			}else {
+				$data = array('result' => '');
+			}	
+		}else{
+			$data = array('result' => '');
+		}
+
+		$this->load->view('headers/librerias');
+		$this->load->view('buscar', $data);
+		$this->load->view('footer');
+	}
 
 	
 

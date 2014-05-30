@@ -18,5 +18,15 @@ class bookmarksModel extends CI_Model {
     		return FALSE;
     	}
     }
+
+    function buscar($query) {
+        $this->db->like('titulo', $query);
+        $query = $this->db->get('bookmarks');
+        if ($query->num_rows() > 0){
+            return $query;
+        }else{
+            return FALSE;
+        }
+    }
 	
 }
