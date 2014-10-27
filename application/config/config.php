@@ -14,7 +14,8 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://localhost/codeigniter';
+//$config['base_url']	= 'http://localhost/codeigniter';
+$config['base_url']	= 'http://local.codeigniter.dev';
 
 /*
 |--------------------------------------------------------------------------
@@ -26,7 +27,7 @@ $config['base_url']	= 'http://localhost/codeigniter';
 | variable so that it is blank.
 |
 */
-$config['index_page'] = '';
+$config['index_page'] = 'index.php';
 
 /*
 |--------------------------------------------------------------------------
