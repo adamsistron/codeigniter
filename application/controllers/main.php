@@ -14,9 +14,13 @@ class Main extends CI_Controller {
 	}
 
 	public function agregar() {
-		$this->load->view('headers/librerias');
-		$this->load->view('agregar');
-		$this->load->view('footer');
+		if ($this->tank_auth->is_logged_in()){
+			$this->load->view('headers/librerias');
+			$this->load->view('agregar');
+			$this->load->view('footer');
+		}else{
+			echo "No tienes permisos para entrar";
+		}
 	}
 
 	public function guardar() {
