@@ -31,8 +31,8 @@ $captcha = array(
 	'maxlength'	=> 8,
 );
 ?>
-<?php echo form_open($this->uri->uri_string()); ?>
-<table>
+    <?php echo form_open($this->uri->uri_string()); ?>
+			<table>
 	<tr>
 		<td><?php echo form_label($login_label, $login['id']); ?></td>
 		<td><?php echo form_input($login); ?></td>

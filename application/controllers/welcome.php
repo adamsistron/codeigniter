@@ -11,8 +11,10 @@ class Welcome extends CI_Controller{
 			redirect('/auth/login/');
 		} else {
 			$data['user_id']	= $this->tank_auth->get_user_id();
-			$data['username']	= $this->tank_auth->get_username();
+			$data['username']	= $this->tank_auth->get_username();			
+			$this->load->view('headers/librerias');
 			$this->load->view('principal', $data);
+			$this->load->view('footer');
 		}
 	}
 }
