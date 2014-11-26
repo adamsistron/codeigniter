@@ -7,40 +7,29 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Codeigniter</a>
+      <a class="navbar-brand" href="#">Codeigniter</a>      
     </div>
     <div id="navbar" class="collapse navbar-collapse">
-      <ul class="nav navbar-nav">
-        <li class="active">
+    <?php $activa = $this->uri->segment(2); ?>
+      <ul class="nav navbar-nav">        
+        <li <?php if ($activa == ''){ echo "class='active'"; } ?>>
         	<a href="<?=base_url()?>">
         		<span class="glyphicon glyphicon-home"></span>&nbsp;
         		Inicio
         	</a>
         </li>
-        <li>
+        <li <?php if ($activa == 'agregar'){ echo "class='active'"; } ?>>
         	<a href="<?=base_url()?>index.php/main/agregar">
         		<span class="glyphicon glyphicon-plus"></span>&nbsp;Agregar
         	</a>
         </li>          
-        <li>
-          <a href="<?=base_url()?>index.php/main/editar">
-          	<span class="glyphicon glyphicon-pencil"></span>&nbsp;
-          	Editar
-          </a>
-        </li>
-        <li>
-					<a href="<?=base_url()?>index.php/main/eliminar">
-						<span class="glyphicon glyphicon-minus"></span>&nbsp;
-						Eliminar
-					</a>
-				</li>
-				<li>
+				<li <?php if ($activa == 'ver'){ echo "class='active'"; } ?>>
 					<a href="<?=base_url()?>index.php/main/ver">
 						<span class="glyphicon glyphicon-th-large"></span>&nbsp;
 						Ver todo
 					</a>
 				</li>
-				<li>
+				<li <?php if ($activa == 'buscar'){ echo "class='active'"; } ?>>
 					<a href="<?=base_url()?>index.php/main/buscar">
 						<span class="glyphicon glyphicon-search"></span>&nbsp;
 						Buscar

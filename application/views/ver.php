@@ -1,24 +1,43 @@
-		<?=$this->load->view('headers/menu');?><br /><br />
-		
-		<p><b>Ver todos los enlaces</b></p>
+	<?=$this->load->view('headers/menu');?>
 
-		<table align="center">
-			<tr>
-				<td align="center"><h4>Título</h4></td>
-				<td align="center"><h4>URL</h4></td>				
-			</tr>
-			<?php 
-				if ($enlaces != FALSE){
-					foreach ($enlaces->result() as $row){
-						echo "<tr>";
-							echo "<td>".$row->titulo."</td>";
-							echo "<td>".$row->url."</td>";
-						echo "</tr>";
-					}	
-				}else{
-					echo "No hay enlaces";
-				}				
-			?>			
-		</table>
+	<div class="clearfix">&nbsp;</div>
+	<div class="clearfix">&nbsp;</div>
 
+	<div class="container">
+		<div class="col-md-8">
+			<h2>Ver todos los enlaces</h2>
+		</div>
 	</div>
+
+	<div class="container">
+		<div class="col-md-12">
+			<table class="table table-striped table-bordered">
+				<thead>
+					<tr>
+						<th>Título</th>
+						<th>URL</th>
+						<th>Acciones</th>
+					</tr>	
+				</thead>
+				<tbody>
+				<?php 
+					if ($enlaces != FALSE){
+						foreach ($enlaces->result() as $row){
+							echo "<tr>";
+								echo "<td>".$row->titulo."</td>";
+								echo "<td>".$row->url."</td>";
+								echo "<td>";
+									echo "<a href='' class='label label-success'><span class='glyphicon glyphicon-pencil'></a></span>";
+									echo "&nbsp;&nbsp;";
+									echo "<a href='".base_url()."index.php/bookmarks/eliminar/".$row->id."' class='label label-danger'>";
+										echo "<span class='glyphicon glyphicon-minus'></a></span>";
+								echo "</tr>";
+						}	
+					}				
+				?>
+				</tbody>
+			</table>	
+		</div>
+	</div>	
+
+</div>

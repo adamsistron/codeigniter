@@ -4,10 +4,10 @@ class Main extends CI_Controller {
 	
 	function __construct() {
 		parent::__construct();
-		$this->load->model('bookmarksModel');
+		$this->load->model('bookmarksModel');		
 	}
 
-	public function index() {		
+	public function index() {
 		$this->load->view('headers/librerias');
 		$this->load->view('principal');
 		$this->load->view('footer');
@@ -34,7 +34,7 @@ class Main extends CI_Controller {
 		redirect('main/agregar');
 	}
 
-	public function ver(){
+	public function ver(){		
 		$data = array(
 			'enlaces' => $this->bookmarksModel->verTodo(),
 			'dump'    => 0

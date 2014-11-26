@@ -10,7 +10,7 @@ class bookmarksModel extends CI_Model {
   	$this->db->insert('bookmarks', $data);
   }
 
-  function verTodo(){
+  function verTodo($limite = 0){
   	$query = $this->db->get('bookmarks');
   	if ($query->num_rows() > 0){
   		return $query;
@@ -28,5 +28,14 @@ class bookmarksModel extends CI_Model {
       return FALSE;
     }
   }
+
+  function eliminarId($id){
+    $this->db->where('id', $id);
+    $this->db->delete('bookmarks');
+  }
+
+
+
+
 	
 }
