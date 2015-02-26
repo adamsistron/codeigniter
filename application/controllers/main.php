@@ -52,13 +52,17 @@ class Main extends CI_Controller {
 
 		if ($query) {
 			$result = $this->bookmarksModel->buscar(trim($query));
+			$total = $this->bookmarksModel->totalResultados(trim($query));
 			if ($result != FALSE){
-				$data = array('result' => $result);
+				$data = array(
+					'result' => $result,
+					'total'  => $total
+				);
 			}else {
-				$data = array('result' => '');
+				$data = array('result' => '', 'total' => $total);
 			}	
 		}else{
-			$data = array('result' => '');
+			$data = array('result' => '', 'total' => 0);
 		}
 
 		$this->load->view('headers/librerias');

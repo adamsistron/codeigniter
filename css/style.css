@@ -9,3 +9,13 @@ body {
 .row{
 	padding-top: 30px;
 }
+
+/* Mac: cmd + shift + c;
+   Windows: ctrl + shift + c;
+   Linux: ctrl + shift +c;
+*/
+.text{
+	background: #ff4255;
+}
+
+

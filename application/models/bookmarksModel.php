@@ -21,6 +21,7 @@ class bookmarksModel extends CI_Model {
 
   function buscar($query) {
     $this->db->like('titulo', $query);
+    $this->db->or_like('url', $query);
     $query = $this->db->get('bookmarks');
     if ($query->num_rows() > 0){
       return $query;
@@ -34,6 +35,12 @@ class bookmarksModel extends CI_Model {
     $this->db->delete('bookmarks');
   }
 
+  function totalResultados($query){
+    $this->db->like('titulo', $query);
+    $this->db->or_like('url', $query);
+    $query = $this->db->get('bookmarks');
+    return $query->num_rows();
+  }
 
 
 
