@@ -70,6 +70,12 @@ class Main extends CI_Controller {
 		$this->load->view('footer');
 	}
 
+	public function validaciones(){
+		$this->load->view('headers/librerias');
+		$this->load->view('validaciones');
+		$this->load->view('footer');
+	}
+
 	
 
 	
