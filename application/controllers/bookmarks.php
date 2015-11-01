@@ -13,10 +13,10 @@ class Bookmarks extends CI_Controller {
 	}
 
 	public function eliminar(){	
-		$this->load->model('bookmarksModel');
+		$this->load->model('bookmarks_model');
 		$id = $this->uri->segment(3);
 		if ($id){
-			$this->bookmarksModel->eliminarId($id);
+			$this->bookmarks_model->eliminarId($id);
 			redirect('main/ver');
 		}
 		

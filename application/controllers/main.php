@@ -4,7 +4,7 @@ class Main extends CI_Controller {
 	
 	function __construct() {
 		parent::__construct();
-		//$this->load->model('bookmarksModel');		
+		$this->load->model('bookmarks_model');		
 	}
 
 	public function index() {
@@ -14,7 +14,7 @@ class Main extends CI_Controller {
 	}
 
 	public function agregar() {
-	$this->load->model('bookmarksModel');			
+	//$this->load->model('bookmarks_model');			
             if ($this->tank_auth->is_logged_in()){
 			$this->load->view('headers/librerias');
 			$this->load->view('agregar');
@@ -31,13 +31,13 @@ class Main extends CI_Controller {
 			'creacion' => date('Y/m/d h:m')
 		);
 
-		$this->bookmarksModel->guardar($data);
+		$this->bookmarks_model->guardar($data);
 		redirect('main/agregar');
 	}
 
 	public function ver(){		
 		$data = array(
-			'enlaces' => $this->bookmarksModel->verTodo(),
+			'enlaces' => $this->bookmarks_model->verTodo(),
 			'dump'    => 0
 		);
 
@@ -52,8 +52,8 @@ class Main extends CI_Controller {
 		$query = $this->input->get('query', TRUE);
 
 		if ($query) {
-			$result = $this->bookmarksModel->buscar(trim($query));
-			$total = $this->bookmarksModel->totalResultados(trim($query));
+			$result = $this->bookmarks_model->buscar(trim($query));
+			$total = $this->bookmarks_model->totalResultados(trim($query));
 			if ($result != FALSE){
 				$data = array(
 					'result' => $result,

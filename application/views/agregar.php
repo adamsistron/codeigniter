@@ -10,7 +10,7 @@
 					<div class="form-group">
 			    	<label for="inputEmail3" class="col-sm-2 control-label">Titulo</label>
 				    <div class="col-sm-10">
-				      <input type="text" class="form-control" id="titulo" name="url" placeholder="Ingresa un título">
+				      <input type="text" class="form-control" id="titulo" name="titulo" placeholder="Ingresa un título">
 				    </div>
 			  	</div>
 			  	<div class="form-group">

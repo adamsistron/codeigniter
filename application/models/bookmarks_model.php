@@ -1,10 +1,17 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+class Bookmarks_Model extends CI_Model {
 
-class bookmarksModel extends CI_Model { 
+    /*var $title   = '';
+    var $content = '';
+    var $date    = '';*/
+    
 
-	function __construct() {
-    parent::__construct();
-  }
+    function __construct()
+    {
+        // Call the Model constructor
+        parent::__construct();
+
+    }
 
   function guardar($data){
   	$this->db->insert('bookmarks', $data);
