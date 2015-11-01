@@ -65,6 +65,22 @@ class Bookmarks_Model extends CI_Model {
     $query = $this->db->get('bookmarks');
     return $query->num_rows();
   }
+  
+  function obtenerDatosStock($serie){
+   
+      
+      //$query1 = $this->db->query('SELECT UNIX_TIMESTAMP(fecha) as fecha, cantidad1, cantidad2, cantidad3 FROM codeigniter.compare LIMIT 100;');
+      $query = $this->db->query("SELECT UNIX_TIMESTAMP(CONVERT_TZ(fecha,'+00:00', @@session.time_zone))*1000 as fecha, round($serie,2) as $serie FROM codeigniter.compare WHERE fecha > '2010-01-01'
+LIMIT 1000");
+      $i = 0;
+        foreach ($query->result_array() as $row)
+        {
+           $data[$i] = array($row['fecha'],$row[$serie]);
+           $i++;
+        }
+        
+        echo json_encode($data, JSON_NUMERIC_CHECK);
+  }
 
 
 

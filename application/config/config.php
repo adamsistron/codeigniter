@@ -14,8 +14,10 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://localhost/codeigniter';
-//$config['base_url']	= 'http://local.codeigniter.dev';
+
+$ip_servidor=$_SERVER["SERVER_NAME"];
+//Ruta WEB del proyecto
+$config['base_url']	= "http://$ip_servidor/codeigniter";
 
 /*
 |--------------------------------------------------------------------------

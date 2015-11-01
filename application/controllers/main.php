@@ -120,6 +120,23 @@ class Main extends CI_Controller {
 		$this->load->view('footer');
 	}
 
+        public function stock($tipo){
+		
+                     
+            $this->load->view('headers/librerias');
+            $this->load->view("hc/$tipo");
+            $this->load->view('hc/footer');
+	}
+        
+        public function stockDatos($serie){
+		
+            //echo $serie;die();
+            
+            $obtenerDatosStock = $this->bookmarks_model->obtenerDatosStock($serie);
+            
+            $data['data'] = trim("");
+	}
+
 	
 
 	
