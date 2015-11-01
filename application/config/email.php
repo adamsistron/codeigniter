@@ -10,9 +10,16 @@
 |	http://codeigniter.com/user_guide/libraries/email.html
 |
 */
-$config['mailtype'] = 'html';
-$config['charset'] = 'utf-8';
-$config['newline'] = "\r\n";
+
+
+ $config['protocol'] = "smtp";
+ $config['smtp_host'] = "ssl://smtp.googlemail.com";
+ $config['smtp_port'] = "465";
+ $config['smtp_user'] = "adamsistron@gmail.com";//also valid  Google Apps Accounts
+ $config['smtp_pass'] = "QRAFZV14";
+ $config['mailtype'] = 'html';
+ $config['charset'] = 'utf-8';
+ $config['newline'] = "\r\n";
 
 
 /* End of file email.php */

@@ -4,7 +4,7 @@ class Main extends CI_Controller {
 	
 	function __construct() {
 		parent::__construct();
-		$this->load->model('bookmarksModel');		
+		//$this->load->model('bookmarksModel');		
 	}
 
 	public function index() {
@@ -14,7 +14,8 @@ class Main extends CI_Controller {
 	}
 
 	public function agregar() {
-		if ($this->tank_auth->is_logged_in()){
+	$this->load->model('bookmarksModel');			
+            if ($this->tank_auth->is_logged_in()){
 			$this->load->view('headers/librerias');
 			$this->load->view('agregar');
 			$this->load->view('footer');

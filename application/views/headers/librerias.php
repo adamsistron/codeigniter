@@ -8,10 +8,12 @@
   <meta name="author" content="">
 	<title>Bienvenido</title>
 	<!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+	<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">-->
+        <link href="<?=base_url()?>css/bootstrap.min.css" type="text/css" rel="stylesheet">
 
 	<!-- Optional theme -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+	<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">-->
+        <link href="<?=base_url()?>css/bootstrap-theme.min.css" type="text/css" rel="stylesheet">
 
 	<!-- Latest compiled and minified JavaScript -->	
 	<link href="<?=base_url()?>css/style.css" type="text/css" rel="stylesheet">

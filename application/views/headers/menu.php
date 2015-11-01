@@ -19,24 +19,24 @@
         	</a>
         </li>
         <li <?php if ($activa == 'agregar'){ echo "class='active'"; } ?>>
-        	<a href="<?=base_url()?>index.php/main/agregar">
+        	<a href="<?=base_url()?>main/agregar">
         		<span class="glyphicon glyphicon-plus"></span>&nbsp;Agregar
         	</a>
         </li>          
 				<li <?php if ($activa == 'ver'){ echo "class='active'"; } ?>>
-					<a href="<?=base_url()?>index.php/main/ver">
+					<a href="<?=base_url()?>main/ver">
 						<span class="glyphicon glyphicon-th-large"></span>&nbsp;
 						Ver todo
 					</a>
 				</li>
 				<li <?php if ($activa == 'buscar'){ echo "class='active'"; } ?>>
-					<a href="<?=base_url()?>index.php/main/buscar">
+					<a href="<?=base_url()?>main/buscar">
 						<span class="glyphicon glyphicon-search"></span>&nbsp;
 						Buscar
 					</a>
 				</li>
 				<li>
-					<a href="<?=base_url()?>index.php/auth/logout">
+					<a href="<?=base_url()?>auth/logout">
 						<span class="glyphicon glyphicon-remove-sign"></span>&nbsp;
 						Salir
 					</a>

@@ -1,3 +1,5 @@
+<?php $this->load->view('headers/librerias'); ?>
+<link href="<?=base_url()?>css/tankauth.css" type="text/css" rel="stylesheet">
 <?php
 if ($use_username) {
 	$username = array(
@@ -6,6 +8,7 @@ if ($use_username) {
 		'value' => set_value('username'),
 		'maxlength'	=> $this->config->item('username_max_length', 'tank_auth'),
 		'size'	=> 30,
+                'class' => 'form-signin'
 	);
 }
 $email = array(
@@ -14,6 +17,7 @@ $email = array(
 	'value'	=> set_value('email'),
 	'maxlength'	=> 80,
 	'size'	=> 30,
+    'class' => 'form-signin'
 );
 $password = array(
 	'name'	=> 'password',
@@ -21,6 +25,7 @@ $password = array(
 	'value' => set_value('password'),
 	'maxlength'	=> $this->config->item('password_max_length', 'tank_auth'),
 	'size'	=> 30,
+    'class' => 'form-signin'
 );
 $confirm_password = array(
 	'name'	=> 'confirm_password',
@@ -28,14 +33,20 @@ $confirm_password = array(
 	'value' => set_value('confirm_password'),
 	'maxlength'	=> $this->config->item('password_max_length', 'tank_auth'),
 	'size'	=> 30,
+    'class' => 'form-signin'
 );
 $captcha = array(
 	'name'	=> 'captcha',
 	'id'	=> 'captcha',
 	'maxlength'	=> 8,
 );
+$attributes = array('class' => 'form-signin', 'id' => 'form-signin');
+$submit = array(
+		'class' => 'btn btn-large btn-primary'
+	);
 ?>
-<?php echo form_open($this->uri->uri_string()); ?>
+<?php echo form_open($this->uri->uri_string(), $attributes); ?>
+<h2 class="form-signin-heading">Registrar Usuario</h2>
 <table>
 	<?php if ($use_username) { ?>
 	<tr>
@@ -96,5 +107,5 @@ $captcha = array(
 	<?php }
 	} ?>
 </table>
-<?php echo form_submit('register', 'Register'); ?>
+<?php echo form_submit('register', 'Register', "class = 'btn btn-primary'"); ?>
 <?php echo form_close(); ?>
