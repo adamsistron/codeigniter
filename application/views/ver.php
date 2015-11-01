@@ -27,7 +27,7 @@
 								echo "<td>".$row->titulo."</td>";
 								echo "<td>".$row->url."</td>";
 								echo "<td>";
-									echo "<a href='' class='label label-success'><span class='glyphicon glyphicon-pencil'></a></span>";
+									echo "<a href='".base_url()."main/editar/".$row->id."' class='label label-success'><span class='glyphicon glyphicon-pencil'></a></span>";
 									echo "&nbsp;&nbsp;";
 									echo "<a href='".base_url()."bookmarks/eliminar/".$row->id."' class='label label-danger'>";
 										echo "<span class='glyphicon glyphicon-minus'></a></span>";

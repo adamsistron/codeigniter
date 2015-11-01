@@ -35,6 +35,12 @@
 						Buscar
 					</a>
 				</li>
+				<li <?php if ($activa == 'validaciones'){ echo "class='active'"; } ?>>
+					<a href="<?=base_url()?>main/validaciones">
+						<span class="glyphicon glyphicon-ok"></span>&nbsp;
+						Validaciones
+					</a>
+				</li>
 				<li>
 					<a href="<?=base_url()?>auth/logout">
 						<span class="glyphicon glyphicon-remove-sign"></span>&nbsp;

@@ -41,7 +41,24 @@ class Bookmarks_Model extends CI_Model {
     $this->db->where('id', $id);
     $this->db->delete('bookmarks');
   }
-
+  
+  function obtenerEnlace($id){
+      $this->db->where('id', $id);
+      $query = $this->db->get('bookmarks');
+      if ($query->num_rows() > 0){
+          return $query;
+      }else{
+          return FALSE;
+      }
+      
+  }
+  
+  function editarEnlace($id, $data){
+      $this->db->where('id', $id);
+      $this->db->update('bookmarks', $data);
+            
+  }
+  
   function totalResultados($query){
     $this->db->like('titulo', $query);
     $this->db->or_like('url', $query);

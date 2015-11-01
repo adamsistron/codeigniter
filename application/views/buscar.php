@@ -1,3 +1,4 @@
+<?=$this->load->view('headers/menu');?>
 <div class="clearfix">&nbsp;</div>
 <div class="clearfix">&nbsp;</div>
 
@@ -5,23 +6,19 @@
 	<div class="col-md-8">
 		<h2>Buscar</h2>
 	</div>
-</div>
-
-<div id="container">	
+	
 	<div class="col-md-12">		
-
-		<?=$this->load->view('headers/menu');?>
-
-		<div class="clearfix">&nbsp;</div>
-
 		<table class="table table-striped table-bordered">
 				<thead>
 					<tr>
 						<form id="form" method="GET" action="<?=base_url()?>index.php/main/buscar">
-							<input type="text" id="query" name="query" />
-							<input type="submit" id="buscar" value="Buscar" />
+                                                    
+                                                    <input type="text" class="form-control" style="max-width: 200px; margin: 0; padding: 0" id="query" name="query" />
+                                                    <div class="clearfix">&nbsp;</div>
+                                                    <input type="submit" class="btn btn-primary" id="buscar" value="Buscar" />
 						</form>
-						<div class="clearfix">&nbsp;</div>
+                                <div class="clearfix">&nbsp;</div>
+						
 					</tr>
 					<tr>
 						<th>Título</th>
@@ -37,9 +34,9 @@
 								echo "<td>".$row->titulo."</td>";
 								echo "<td>".$row->url."</td>";
 								echo "<td>";
-									echo "<a href='' class='label label-success'><span class='glyphicon glyphicon-pencil'></a></span>";
+									echo "<a href='".base_url()."main/editar/".$row->id."' class='label label-success'><span class='glyphicon glyphicon-pencil'></a></span>";
 									echo "&nbsp;&nbsp;";
-									echo "<a href='".base_url()."index.php/bookmarks/eliminar/".$row->id."' class='label label-danger'>";
+									echo "<a href='".base_url()."bookmarks/eliminar/".$row->id."' class='label label-danger'>";
 										echo "<span class='glyphicon glyphicon-minus'></a></span>";
 								echo "</tr>";
 						}	
@@ -52,3 +49,4 @@
 		<p>Total de resultados: <b><?php echo $total; ?></b></p>
 
 	</div>
+</div>

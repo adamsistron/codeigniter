@@ -6,6 +6,14 @@ $(document).ready(function(){
 				required: true,	
 				alphas: true		
 			},
+			titulo: {
+				required: true,	
+				alphas: true		
+			},
+			url: {
+				required: true,	
+				url: true		
+			},
 			edad: {
 				required: true,
 				numbers: true

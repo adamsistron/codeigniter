@@ -70,8 +70,51 @@ class Main extends CI_Controller {
 		$this->load->view('buscar', $data);
 		$this->load->view('footer');
 	}
+        
+        public function editar() {
+            if ($this->tank_auth->is_logged_in()){
+		
+                $id = $this->uri->segment(3);
+                $obtenerEnlace = $this->bookmarks_model->obtenerEnlace($id);
+                
+                if($obtenerEnlace != false){
+                    
+                    foreach ($obtenerEnlace->result() as $row)
+                    {
+                        $titulo = $row->titulo;
+                        $url = $row->url;
+                    }
+                    
+                    $data = array(
+                            "id" => $id,
+                            "titulo" => $titulo,
+                            "url" => $url,
+                        
+                            );
+                }  else {
+                    return FALSE;
+                    $data = '';
+                }
+                    $this->load->view('headers/librerias');
+                    $this->load->view('editar', $data);
+                    $this->load->view('footer');
+		}else{
+			echo "No tienes permisos para entrar";
+		}
+	}
+        
+        public function editarEnlace(){
+             $id = $this->uri->segment(3);
+             
+             $data = array(
+                            "titulo" => $this->input->post('titulo', TRUE),
+                            "url" => $this->input->post('url', TRUE),
+                            );
+             $this->bookmarks_model->editarEnlace($id, $data);
+             redirect('main/ver');
+        }
 
-	public function validaciones(){
+        public function validaciones(){
 		$this->load->view('headers/librerias');
 		$this->load->view('validaciones');
 		$this->load->view('footer');
