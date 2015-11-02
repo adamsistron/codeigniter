@@ -66,7 +66,7 @@ class Bookmarks_Model extends CI_Model {
     return $query->num_rows();
   }
   
-  function obtenerDatosStock($serie){
+  function obtenerStockDatosCompare($serie){
    
       
       //$query1 = $this->db->query('SELECT UNIX_TIMESTAMP(fecha) as fecha, cantidad1, cantidad2, cantidad3 FROM codeigniter.compare LIMIT 100;');
@@ -78,8 +78,7 @@ LIMIT 1000");
            $data[$i] = array($row['fecha'],$row[$serie]);
            $i++;
         }
-        
-        echo json_encode($data, JSON_NUMERIC_CHECK);
+        return $data;
   }
 
 

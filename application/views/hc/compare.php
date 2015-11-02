@@ -17,7 +17,10 @@ $(function () {
             $('#container').highcharts('StockChart', {
 
                 rangeSelector: {
-                    selected: 4
+                    selected: 1
+                },
+                title : {
+                text : 'Cantidad de Despachos'
                 },
 
                 yAxis: {
@@ -50,7 +53,7 @@ $(function () {
 
     $.each(names, function (i, name) {
 
-        $.getJSON('<?=base_url()?>main/stockDatos/' + name.toLowerCase(),    function (data) {
+        $.getJSON('<?=base_url()?>main/stockDatosCompare/' + name.toLowerCase(),    function (data) {
 
             seriesOptions[i] = {
                 name: name,
@@ -77,6 +80,6 @@ $(function () {
 <script src="<?=base_url()?>hc/stock/js/modules/exporting.js"></script>
 
 
-<div id="container" style="height: 50%; min-width: 310px"></div>
+<div id="container" style="height: 400px; min-width: 310px"></div>
 	</body>
 </html>

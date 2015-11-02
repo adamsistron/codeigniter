@@ -121,20 +121,22 @@ class Main extends CI_Controller {
 	}
 
         public function stock($tipo){
-		
+		if ($this->tank_auth->is_logged_in()){
                      
             $this->load->view('headers/librerias');
             $this->load->view("hc/$tipo");
             $this->load->view('hc/footer');
+            }else{
+			echo "No tienes permisos para entrar";
+                        redirect('auth/login');
+		}
 	}
         
-        public function stockDatos($serie){
-		
-            //echo $serie;die();
+        public function stockDatosCompare($serie){
+	            
+            $obtenerStockDatosCompare = $this->bookmarks_model->obtenerStockDatosCompare($serie);
             
-            $obtenerDatosStock = $this->bookmarks_model->obtenerDatosStock($serie);
-            
-            $data['data'] = trim("");
+            echo json_encode($obtenerStockDatosCompare, JSON_NUMERIC_CHECK);
 	}
 
 	
