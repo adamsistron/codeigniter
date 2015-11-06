@@ -64,6 +64,22 @@ $db['default']['swap_pre'] = '';
 $db['default']['autoinit'] = TRUE;
 $db['default']['stricton'] = FALSE;
 
+$db['scli']['hostname'] = '167.134.197.5';
+$db['scli']['username'] = 'postgres';
+$db['scli']['password'] = 'dwp9sql';
+$db['scli']['database'] = 'dm_scli_sisccombf';
+$db['scli']['dbdriver'] = 'postgre';
+$db['scli']['dbprefix'] = '';
+$db['scli']['pconnect'] = TRUE;
+$db['scli']['db_debug'] = TRUE;
+$db['scli']['cache_on'] = FALSE;
+$db['scli']['cachedir'] = '';
+$db['scli']['char_set'] = 'utf8';
+$db['scli']['dbcollat'] = 'utf8_general_ci';
+$db['scli']['swap_pre'] = '';
+$db['scli']['autoinit'] = TRUE;
+$db['scli']['stricton'] = FALSE;
+
 
 /* End of file database.php */
 /* Location: ./application/config/database.php */

@@ -17,5 +17,7 @@
 
 	<!-- Latest compiled and minified JavaScript -->	
 	<link href="<?=base_url()?>css/style.css" type="text/css" rel="stylesheet">
+        
+        
 </head>
 <body>

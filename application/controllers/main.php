@@ -122,10 +122,10 @@ class Main extends CI_Controller {
 
         public function stock($tipo){
 		if ($this->tank_auth->is_logged_in()){
-                     
-            $this->load->view('headers/librerias');
-            $this->load->view("hc/$tipo");
-            $this->load->view('hc/footer');
+                    $data['estados'] = $this->bookmarks_model->obtenerEstados();
+                    $this->load->view('headers/librerias');
+                    $this->load->view("hc/$tipo", $data);
+                    $this->load->view('hc/footer');
             }else{
 			echo "No tienes permisos para entrar";
                         redirect('auth/login');
@@ -138,6 +138,23 @@ class Main extends CI_Controller {
             
             echo json_encode($obtenerStockDatosCompare, JSON_NUMERIC_CHECK);
 	}
+        
+        public function stockDatosCompareDespachos($condicion){
+	            
+            $obtenerStockDatosCompare = $this->bookmarks_model->obtenerStockDatosCompareDespachos($condicion);
+            
+            echo json_encode($obtenerStockDatosCompare, JSON_NUMERIC_CHECK);
+	}
+
+        
+        public function stockDatosCompareVolumen($condicion){
+	            
+            $obtenerStockDatosCompare = $this->bookmarks_model->obtenerStockDatosCompareVolumen($condicion);
+            
+            echo json_encode($obtenerStockDatosCompare, JSON_NUMERIC_CHECK);
+	}
+        
+       
 
 	
 

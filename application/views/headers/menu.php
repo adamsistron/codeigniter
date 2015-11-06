@@ -56,6 +56,16 @@
                                                     <span class="glyphicon glyphicon-random"></span>
                                                 </a>
                                             </li>
+                                            <li>
+                                                <a href="<?=base_url()?>main/stock/compare_despachos">Compare Despachos
+                                                    <span class="glyphicon glyphicon-random"></span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="<?=base_url()?>main/stock/compare_volumen">Compare Volumen
+                                                    <span class="glyphicon glyphicon-random"></span>
+                                                </a>
+                                            </li>
                                             <li role="separator" class="divider"></li>
                                             <li><a href="#">Separated link</a></li>
                                         </ul>
